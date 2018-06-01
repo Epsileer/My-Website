@@ -1,0 +1,32 @@
+* S is set of n elements then uniform distribution assigns the probability 1/n to each of S.
+
+* Probability of event E is sum of probabilities of the outcomes in E.
+	# p(E) = sum(p(S)) where S -> E
+
+* probability of complements and unions of event
+	# p(E)=1−p(E)
+	# p(E1∪E2) = p(E1)+p(E2)−p(E1∩E2) 
+
+* The conditional probability of E given F, denoted by p(E | F), is deﬁned as 
+	# p(E | F)= p(E∩F) / p(F) 
+
+* The events E and F are independent if and only if 
+	# p(E∩F)= p(E)p(F)
+
+	** Bernoulli Trials and the Binomial Distribution **
+
+* The probability of exactly k successes in n independent Bernoulli trials, with probability of success p and probability of failure q =1−p, is 
+	# C(n,k)*(p^k)*(q^n−k)
+	# n (sum) k=0 C(n,k)*(p^k)*(q^n−k) = (p+q)^n =1
+
+* A random variable is a function from the sample space of an experiment to the set of real numbers. That is, a random variable assigns a real number to each possible outcome.
+
+	** BAYES’THEOREM **
+
+* Suppose that E and F are events from a sample space S such that p(E)!=0 and p(F)!=0. Then 
+	# p(F | E)= p(E | F)*p(F) / p(E | F)*p(F)+p(E | F)*p(F) 
+
+
+
+
+
