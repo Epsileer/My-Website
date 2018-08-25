@@ -13,13 +13,59 @@
     </style>
     <style type="text/css">
         #load{
-    width:100%;
-    height:100%;
-    background: url("copper-loader.gif") no-repeat center;
-    position:fixed;
-    z-index:9999;
-}
+        width:100%;
+        height:100%;
+        background: url("copper-loader.gif") no-repeat center;
+        position:fixed;
+        z-index:9999;
+    }
     </style>
+
+
+<style type="text/css">
+.flip {
+  -webkit-perspective: 800;   
+          perspective: 800;
+        position: relative;
+        text-align: center;
+        background-color: black;
+        border-radius: 5px;
+        height: 250px;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+}
+.flip .card {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background-color: #fff;
+   
+}
+.flip .card .face {
+  -webkit-backface-visibility: hidden ;
+    backface-visibility: hidden ;
+   z-index: 2;
+}
+.flip .card .front {
+    border-left: 10px solid #d9534f;
+    width: 100%;
+    height: 250px;
+}
+
+.flip .card .back {
+  padding-top: 10px;
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-left: 10px solid #d9534f;
+  background-image: linear-gradient(to right, #fff , #37B9E9);
+}
+</style>
 
 </head>
 <body>
@@ -31,7 +77,7 @@
         <div class="col-lg-8 offset-lg-1 col-md-12 col-sm-12 col-xs-12 text-white">
             <h1 class=" display-4" style="font-weight: 400">Amit Kumar TIwari</h1>
             <p class="" style="font-size: 15px;">
-                I am a Computer Science and Engineering Undergraduate from Madan Mohan Malaviya University of Technology, Gorakhpur. I have great interest in coding and love Web & Android Development. Also lil bit interest in Machine Learning.
+                I am a Computer Science and Engineering Undergraduate from Madan Mohan Malaviya University of Technology, Gorakhpur. I have great interest in coding, love Web & Android Development and lil bit interest in Machine Learning.
             </p>
             <div class="row">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
@@ -137,21 +183,42 @@
     </div>
     <div class="container-fluid">
         <div class="row">
+
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pt-2 pb-2">
-                <div class="img-fluid">
-                    <img src="image/1.jpg" alt="" width="100%" height="100%">
-                </div>
+              <div class="flip">
+                <div class="card"> 
+                  <div class="face front"> 
+                    <div class="img-fluid">
+                        <img src="image/olcademy.png" alt="" width="80%" height="25%" style="left: 50%;top: 50% ;transform: translate(-50%,-50%);position: absolute;" >
+                    </div>
+                  </div> 
+                  <div class="face back"> 
+                      <h3 style="padding-top: 50px; color: white;">Web Development Intern</h3>
+                      <p>@ Olcademy</p>
+                      <button type="button" class="btn btn-default text-white" style="background-color:#d9534f">View Certificate</button>
+                  </div>
+                </div>   
+              </div>
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pt-2 pb-2">
-                <div class="img-fluid">
-                    <img src="image/1.jpg" alt="" width="100%" height="100%">
-                </div>
+              <div class="flip">
+                <div class="card"> 
+                  <div class="face front"> 
+                    <div class="img-fluid">
+                        <img src="image/healthok.png" alt="" width="60%" height="20%" style="left: 50%;top: 50% ;transform: translate(-50%,-50%);position: absolute;" >
+                    </div>
+                  </div> 
+                  <div class="face back"> 
+                      <h3 style="padding-top: 50px;color: white;">Android Development Intern</h3>
+                      <p>@ Health-Ok</p>
+                      <button type="button" class="btn btn-default text-white" style="background-color:#d9534f ">View Certificate</button>
+                  </div>
+                </div>   
+              </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pt-2 pb-2">
-                <div class="img-fluid">
-                    <img src="image/1.jpg" alt="" width="100%" height="100%">
-                </div>
-            </div>
+
+
         </div>
     </div>
 
@@ -201,5 +268,11 @@
       },1000);
   }
 }
+</script>
+<script type="text/javascript">
+    $('.flip').hover(function(){
+        $(this).find('.card').toggleClass('flipped');
+
+    });
 </script>
 </html>
